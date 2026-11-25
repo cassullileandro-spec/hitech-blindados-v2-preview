@@ -1,0 +1,72 @@
+/* Galeria da empresa; composição editorial compartilhada em institucional.css. */
+.story-slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; scroll-snap-stop: always; margin: 0; overflow: hidden; border-radius: var(--r); }
+.story-slide > img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
+.story-slide:first-child > img { object-position: center 62%; }
+.story-slide:nth-child(3) > img { object-position: center 35%; }
+
+
+/* Bento editorial: três colunas, contraste claro/escuro e cinco conteúdos preservados. */
+.commitments-bento { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); grid-template-rows: minmax(304px,auto) minmax(336px,auto); gap: 24px; }
+.commitments-bento > .photo-card { min-height: 0; padding: 24px; }
+.commitments-bento > .photo-card:first-child { grid-column: 1; grid-row: 1; }
+.commitments-bento > .photo-card:nth-child(2) { grid-column: 3; grid-row: 1; }
+.commitments-bento > .photo-card:first-child > img { object-position: 59% center; }
+.commitments-bento > .photo-card:nth-child(2) > img { object-position: center; }
+.commitments-bento .photo-card p { margin-top: 16px; font-size: 14px; line-height: 22px; }
+.company-policy-card { min-width: 0; padding: 24px; border: 0; border-radius: var(--r); background: #F9F9F9; --txt: #414141; --txt-2: #626262; --accent: #176B9E; --button-bg: #E4E9EE; --button-hover: #D8E0E7; color: var(--txt); display: flex; flex-direction: column; }
+.policy-card-heading { display: flex; align-items: start; justify-content: space-between; gap: 16px; }
+.policy-card-heading svg { flex: 0 0 32px; width: 32px; height: 32px; color: var(--accent); }
+.company-policy-card h3 { font-size: var(--compact-title-size); line-height: var(--compact-title-leading); font-weight: 600; letter-spacing: var(--title-tracking); }
+.company-policy-card p { margin-top: 16px; color: var(--txt-2); font-size: var(--aux-size); line-height: var(--body-leading); }
+.company-policy-card .text-list { margin-top: 24px; }
+.company-policy-card .text-list li { padding: 0 0 0 16px; border: 0; }
+.company-policy-card .text-list li + li { margin-top: 16px; }
+.company-policy-card .text-list li::before { top: 10px; }
+.company-quality-policy { grid-column: 2; grid-row: 1 / 3; position: relative; isolation: isolate; overflow: hidden; padding: 32px 32px 200px; background: linear-gradient(145deg,#101820,#080B0F); --txt: #F3F5F7; --txt-2: #BFC8D1; --accent: #6FBAF0; }
+.company-quality-policy .text-list li { font-size: 16px; line-height: 24px; }
+.company-environment-policy { grid-column: 3; grid-row: 2; }
+.company-transparency-card { grid-column: 1; grid-row: 2; gap: 16px; }
+.company-transparency-card p { margin-top: 16px; }
+.company-report-year { font-size: 64px; line-height: 64px; font-weight: 300; letter-spacing: -.06em; color: #B4C4D1; margin-block: auto; }
+.company-transparency-card .btn { align-self: start; margin: 0; border: 0; }
+@media (min-width:861px) and (max-width:1080px) {
+  .commitments-bento { grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-rows: auto; }
+  .commitments-bento > .photo-card:first-child { grid-column: 1; grid-row: 1; min-height: 336px; }
+  .commitments-bento > .photo-card:nth-child(2) { grid-column: 1; grid-row: 2; min-height: 336px; }
+  .company-quality-policy { grid-column: 2; grid-row: 1 / 3; }
+  .company-environment-policy { grid-column: 2; grid-row: 3; }
+  .company-transparency-card { grid-column: 1; grid-row: 3; }
+}
+@media (max-width:860px) {
+  .commitments-bento { grid-template-columns: minmax(0,1fr); grid-template-rows: auto; gap: 16px; }
+  .commitments-bento > .photo-card, .company-policy-card { grid-column: 1 !important; grid-row: auto !important; }
+  .commitments-bento > .photo-card { min-height: 352px; }
+  .company-quality-policy { padding: 24px 24px 160px; }
+  .company-report-year { margin-block: 8px; }
+}
+
+.company-structure { --txt: #F3F5F7; --txt-2: #BFC8D1; --txt-3: #A6B3BF; --button-bg: #292C30; --button-hover: #383C41; --primary-bg: #F3F5F7; --primary-ink: #0B1016; --primary-hover: #FFFFFF; --line-2: rgba(255,255,255,.2); --line-3: rgba(255,255,255,.2); --edge-hover: #6FBAF0; --accent: #6FBAF0; background: linear-gradient(135deg,#141D26,#0B1016); color: var(--txt); border: 0; }
+.company-structure .editorial-split { align-items: center; }
+.company-structure .story-slide > img { aspect-ratio: 4 / 3; }
+.company-structure-copy { min-width: 0; }
+.company-structure-copy h2 { font-size: var(--hero-title-size); line-height: var(--heading-leading); }
+.company-structure-copy > p { margin-top: 16px; color: var(--txt-2); font-size: var(--body-size); line-height: var(--body-leading); }
+.company-structure-bullets { display: grid; gap: 16px; margin-top: 32px; padding-left: 20px; list-style: disc; color: var(--txt-2); font-size: var(--body-size); line-height: var(--body-leading); }
+.company-structure-bullets li { padding-left: 4px; }
+.company-structure-bullets li::marker { color: var(--accent); }
+.company-structure-bullets strong { color: var(--txt); font-weight: 500; }
+.company-structure-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
+.company-structure .company-structure-actions .btn { margin: 0; }
+
+/* Mesma tipografia dos cards fotográficos da home. */
+.commitments-bento h3, .commitments-bento h3 .light { font-size: var(--card-title-size); line-height: 1.125; font-weight: 600; }
+.commitments-bento .photo-card p { margin-top: 24px; }
+.company-quality-policy, .company-environment-policy { position: relative; isolation: isolate; overflow: hidden; background: #0C1622; --txt: #F3F5F7; --txt-2: #D1D8E0; --accent: #6FBAF0; --accent-2: #6FBAF0; }
+.company-policy-background { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+.company-quality-policy::before, .company-environment-policy::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg,rgba(7,14,22,.12),rgba(7,14,22,.4)); }
+.company-environment-policy::before { background: rgba(7,14,22,.56); }
+
+/* Alternância de superfícies solicitada: estrutura clara e compromissos escuros. */
+:root[data-theme="light"] .company-structure { --txt: #414141; --txt-2: #626262; --txt-3: #707070; --button-bg: #EEF1F4; --button-hover: #E4E9EE; --primary-bg: #555555; --primary-ink: #F9F9F9; --primary-hover: #484848; --line-2: rgba(65,65,65,.12); --line-3: rgba(65,65,65,.18); --accent: #176B9E; --edge-hover: #A8A8A8; background: #F9F9F9; }
+#compromissos { --txt: #F3F5F7; --txt-2: #BFC8D1; background: linear-gradient(135deg,#141D26,#0B1016); color: var(--txt); }
+.company-environment-policy .tlink { align-self: start; margin-top: 16px; }
